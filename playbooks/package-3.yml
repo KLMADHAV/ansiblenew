@@ -1,0 +1,12 @@
+- hosts: centos
+  become: true
+  vars_prompt:
+    - name: pack_name 
+      prompt: Give Package Name 
+      default: telnet
+      private: no
+  tasks:
+    - name: Install Package {{pack_name}}
+      yum: 
+        name: "{{pack_name}}"
+        state: latest

@@ -1,0 +1,10 @@
+- hosts: centos
+  become: true
+  vars_prompt:
+    - name: pack_name 
+      prompt: Give Package Name 
+  tasks:
+    - name: Install Package {{pack_name}}
+      yum: 
+        name: "{{pack_name}}"
+        state: latest

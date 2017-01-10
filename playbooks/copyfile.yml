@@ -1,0 +1,16 @@
+---
+- hosts: all
+  user: admin
+  gather_facts: false
+  sudo: true
+  tasks: 
+    - name: Copy Sample file
+      copy:
+        src: /home/admin/ansible/files/sample.txt
+        dest: /tmp/sample.txt
+        owner: nobody
+ 
+### One more way to provide the syntax
+#     copy: { src: files/sample.txt, dest: /tmp/sample.txt}
+#     copy: src=files/sample.txt dest=/tmp/sample.txt
+...

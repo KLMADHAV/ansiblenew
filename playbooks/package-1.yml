@@ -1,0 +1,9 @@
+- hosts: centos
+  become: true
+  vars:
+    pack_name: bzip2 
+  tasks:
+    - name: Install Package {{pack_name}}
+      yum: 
+        name: "{{pack_name}}"
+        state: latest

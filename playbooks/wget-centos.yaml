@@ -1,0 +1,7 @@
+---
+- hosts: centos
+  become: true 
+  tasks:
+    - name: Install wget package
+      yum: name=wget state=latest
+...
