@@ -1,0 +1,8 @@
+- hosts: centos
+  vars:
+    abcd: 123
+  tasks: 
+    - debug: 
+        msg: "Vendor of this System = {{ansible_system_vendor}}"
+    - debug:
+        msg: "Value of ABCD = {{abcd}}"

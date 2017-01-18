@@ -1,0 +1,11 @@
+- hosts: centos
+  vars_files:
+    - vars.yml 
+  tasks: 
+    - debug: 
+        msg: "Vendor of this System = {{ansible_system_vendor}}"
+    - debug:
+        msg: "Package Name: {{pack_name}}"
+    - name: Printing local facts
+      debug:
+        msg: "Value of abcd = {{ ansible_local.sample.general.abcd}}"

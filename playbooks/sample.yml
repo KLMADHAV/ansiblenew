@@ -1,0 +1,7 @@
+- hosts: sample
+  become: true
+  vars:
+    msg1: "Hello "
+  tasks:
+    - name: sample run
+      debug: msg="printing {{ msg1 }}"
