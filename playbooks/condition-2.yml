@@ -1,0 +1,23 @@
+- hosts: all
+  become: true
+  vars:
+  
+  tasks: 
+   - name: Install Httpd Web Server
+     yum: name=httpd state=installed
+     when: ansible_pkg_mgr == "yum"
+
+   - name: Install Apache Web Server
+     apt: name=apache2 state=installed
+     when: ansible_pkg_mgr == "apt"
+
+   - name: set_fact of service name
+     set_fact: serv_name="httpd"
+     when: ansible_distribution == "CentOS"
+
+   - name: set_fact of service name
+     set_fact: serv_name="apache2"
+     when: ansible_distribution == "Ubuntu"
+
+   - name: Start Web Server
+     service: name={{serv_name}} state=started

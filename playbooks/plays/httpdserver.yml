@@ -1,0 +1,3 @@
+- name: Install {{pack_name}} 
+  yum: name={{pack_name}} state=installed
+  notify: Restart httpd

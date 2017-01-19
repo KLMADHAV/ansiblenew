@@ -1,0 +1,11 @@
+- hosts: centos
+  become: true
+  vars: 
+    pack_name: telnet
+  tasks:
+    - name: Install {{pack_name}}
+      yum: name={{pack_name}} state=installed
+      vars: 
+        pack_name: httpd
+
+    - debug: msg="Pack Name = {{pack_name}}"

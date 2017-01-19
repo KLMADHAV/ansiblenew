@@ -1,0 +1,20 @@
+- hosts: all
+  become: true
+  tasks:
+   - set_fact: 
+       pack_name: mariadb-server
+       serv_name: mariadb
+     when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+
+   - set_fact:
+       pack_name: mysql-server
+       serv_name: mysqld
+     when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
+
+   - name: Install DB
+     yum: name={{pack_name}} state=installed
+     when: ansible_distribution == "CentOS"
+
+   - name: Start DB
+     service: name={{serv_name}} state=started
+     when: ansible_distribution == "CentOS"

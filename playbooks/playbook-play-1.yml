@@ -1,0 +1,11 @@
+- hosts: centos
+  become: true
+  vars:
+    pack_name: httpd
+    serv_name: httpd
+  tasks:
+    - include: plays/httpdserver.yml 
+    - include: plays/dbserver.yml
+
+  handlers:
+    - include: handlers/httpdserver.yml
