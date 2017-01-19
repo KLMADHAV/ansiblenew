@@ -378,3 +378,392 @@ Wed Jan 18 02:39:26 UTC 2017
   377  Gitpush 
   378  date>>history
   379  history >>history
+Thu Jan 19 02:37:39 UTC 2017
+
+    1  sudo su - 
+    2  cp /etc/ansible . -r
+    3  ls
+    4  cd ansible/
+    5  ls
+    6  cd roles/
+    7  ls
+    8  cd ..
+    9  ls
+   10  vim ansible.cfg 
+   11  ls
+   12  vim hosts 
+   13  vim inventory
+   14  ansible --help
+   15  ls
+   16  ansible -i inventory 
+   17  ansible -i inventory all --list-hosts
+   18  vim inventory 
+   19  ansible -i inventory all --list-hosts
+   20  ansible -i inventory webserver --list-hosts
+   21  ansible -i inventory db --list-hosts
+   22  ansible -i inventory tomcat --list-hosts
+   23  sudo su - 
+   24  ls
+   25  rpm -qa |grep ansible
+   26  sudo su - 
+   27  rm -rf ansible/
+   28  cp -r /etc/ansible .
+   29  ls
+   30  cd ansible/
+   31  ls
+   32  vim ansible.cfg 
+   33  ls
+   34  vim hosts 
+   35  vim inventory
+   36  cat inventory 
+   37  ansible --help
+   38  ls
+   39  ansible -i inventory all --list-hosts
+   40  vim inventory 
+   41  ansible -i inventory webserver --list-hosts
+   42  vim inventory 
+   43  ansible -i inventory webserver --list-hosts
+   44  vim inventory 
+   45  ansible -i inventory indiaprod
+   46  ansible -i inventory indiaprod --list-hosts
+   47  cat inventory 
+   48  vim ind
+   49  vim inventory 
+   50  ansible -i inventory indiaprod --list-hosts
+   51  vim inventory 
+   52  ansible --version
+   53  vim inventory 
+   54  ansible -i inventory indiaprod --list-hosts
+   55  ansible -i inventory usaprod --list-hosts
+   56  ansible -i inventory allregions --list-hosts
+   57  vim inventory 
+   58  vim key
+   59  chmod 600 key 
+   60  ssh -i key -l admin 10.128.0.3
+   61  ssh -i key -l admin 10.128.0.4
+   62  ssh -i key -l admin 10.128.0.5
+   63  ssh -i key -l ubuntu 10.128.0.5
+   64  cd 
+   65  ansible --version
+   66  cd ansible/
+   67  ls
+   68  ansible --version
+   69  pwd
+   70  vim inventory 
+   71  ansible -i inventory all --list-hosts
+   72  vim inventory 
+   73  ansible -i inventory all --list-hosts
+   74  ansible --help
+   75  ansible -i inventory all -u admin --private-key key -m ping
+   76  ansible -i inventory all -u ubuntu --private-key key -m ping
+   77  vim inventory 
+   78  ansible -i inventory all -u admin --private-key key -m ping
+   79  vim inventory 
+   80  ansible -i inventory all -u admin --private-key key -m ping
+   81  vim ansible.cfg 
+   82  ansible all -u admin --private-key key -m ping
+   83  vim ansible.cfg 
+   84  ansible all  --private-key key -m ping
+   85  ssh 10.128.0.4
+   86  ssh 10.128.0.4 -vvv
+   87  vim ansible.cfg 
+   88  ansible all   -m ping
+   89  vim inventory 
+   90  ansible all   -m ping
+   91  vim inventory 
+   92  vim ansible.cfg 
+   93  ansible all   -m ping
+   94  ssh-keygen 
+   95  ansible all  --private-key /home/admin/.ssh/id_rsa  -m ping
+   96  vim ansible.cfg 
+   97  ansible all  --private-key /home/admin/.ssh/id_rsa  -m ping
+   98  vim ansible.cfg 
+   99  ansible all -m setup
+  100  ansible all -m ping
+  101  ansible all -m ping -vvv
+  102  vi /tmp/11
+  103  grep 10.128.0.5
+  104  grep 10.128.0.5 /tmp/11
+  105  ansible all -m setup --tree /tmp/myfacts
+  106  cd /tmp/
+  107  ls
+  108  cd myfacts/
+  109  ls
+  110  cat 10.128.0.3
+  111  cd -
+  112  cd 
+  113  cd ansible/
+  114  ansible all -m setup -a 'filter=ansible_distribution'
+  115  ansible all -m setup -a 'filter=ansible_distribution_version'
+  116  ansible --help
+  117  ansible all -m shell -a "touch /tmp/file1"
+  118  ansible all -m shell -a "touch /root/file1"
+  119  ls
+  120  ansible
+  121  cd ansible/
+  122  ls
+  123  vim inventory
+  124  vim ansible.cfg 
+  125  ansible -i inventory all --list-hosts
+  126  ansible -i inventory all -m ping
+  127  ansible -i inventory all -m ping -u admin --private-key=key 
+  128  vim ansible.cfg 
+  129  ansible all -m ping
+  130  pw
+  131  pwd
+  132  echo "# ansiblenew" >> README.md
+  133  git init
+  134  git add .
+  135  sudo yum install git -y
+  136  git init
+  137  git add .
+  138  ls -l
+  139  git status
+  140  Gitpush 
+  141  vim ../bin/Gitpush 
+  142  vim .git/config 
+  143  cd ..
+  144  cd ansible/
+  145  git config remote.origin.url https://you:password@github.com/you/example.git
+  146  vim .git/config 
+  147  git status
+  148  Gitpush 
+  149  mkdir gitpush
+  150  rmdir gitpush
+  151  mdkir bin
+  152  mkdir bin
+  153  cd bin/
+  154  ls
+  155  vim Gitpush
+  156  pwd
+  157  ls
+  158  vim Gitpush
+  159  git remote add origin https://versionit:osicpl@1@github.com/versionit/ansiblenew.git
+  160  cd 
+  161  cd ansible/
+  162  git remote add origin https://versionit:osicpl@1@github.com/versionit/ansiblenew.git
+  163  chmod +x ../bin/Gitpush 
+  164  Gitpush 
+  165  vim .git/config 
+  166  Gitpush 
+  167  vim .git/config 
+  168  Gitpush 
+  169  vim .git/config 
+  170  Gitpush 
+  171  caty
+  172  cat .git/config
+  173  cd ansible/
+  174  ls
+  175  git config --global user.email 'raghuk.vit@gmail.com'
+  176  git config --global user.name Raghu
+  177  Gitpush 
+  178  ls
+  179  cd roles/
+  180  ls
+  181  cd ..
+  182  ls
+  183  mkdir playbooks
+  184  cd playbooks/
+  185  ls
+  186  cd ..
+  187  ls
+  188  vim playbooks/copyfile.yml
+  189  mkdir files
+  190  vim files/sample.txt
+  191  ansible-playbook playbooks/copyfile.yml 
+  192  vim playbooks/copyfile.yml 
+  193  ansible-playbook playbooks/copyfile.yml 
+  194  cd files/
+  195  pwd
+  196  cd .
+  197  cd ..
+  198  vim playbooks/copyfile.yml 
+  199  ansible-playbook playbooks/copyfile.yml 
+  200  vim playbooks/copyfile.yml 
+  201  ansible-playbook playbooks/copyfile.yml 
+  202  vim playbooks/copyfile.yml 
+  203  ansible-playbook playbooks/copyfile.yml 
+  204  vim playbooks/wget.yaml
+  205  vim inventory 
+  206  mv playbooks/wget.yaml playbooks/wget-centos.yaml 
+  207  vim playbooks/wget-centos.yaml
+  208  ansible-playbook playbooks/wget-centos.yaml
+  209  vim playbooks/wget-centos.yaml
+  210  ansible-playbook playbooks/wget-centos.yaml
+  211  vim 
+  212  cp playbooks/wget-centos.yaml 
+  213  vim playbooks/wget-ubuntu.yaml
+  214  ansible-playbook playbooks/wget-ubuntu.yaml
+  215  vim playbooks/wget-ubuntu.yaml
+  216  vim inventory 
+  217  vim playbooks/wget-ubuntu.yaml
+  218  ansible-playbook playbooks/wget-ubuntu.yaml
+  219  vim playbooks/wget-ubuntu.yaml 
+  220  ansible-playbook playbooks/wget-ubuntu.yaml
+  221  ls
+  222  vim playbooks/package-1.yml
+  223  ansible-playbook playbooks/package-1.yml
+  224  vim playbooks/package-1.yml
+  225  ansible-playbook playbooks/package-1.yml
+  226  vim playbooks/package-1.yml
+  227  ansible-playbook playbooks/package-1.yml
+  228  vim playbooks/package-1.yml 
+  229  ansible-playbook playbooks/package-1.yml
+  230  vim playbooks/package-1.yml
+  231  ansible-playbook playbooks/package-1.yml
+  232  cp playbooks/package-1.yml playbooks/package-2.yml
+  233  vim playbooks/package-2.yml
+  234  ansible-playbook playbooks/package-2.yml
+  235  vim playbooks/package-2.yml
+  236  ansible-playbook playbooks/package-2.yml
+  237  cp playbooks/package-2.yml playbooks/package-3.yml
+  238  vim playbooks/package-3.yml
+  239  ansible-playbook playbooks/package-3.yml
+  240  vim playbooks/package-3.yml 
+  241  ansible-playbook playbooks/package-3.yml
+  242  Gitpush 
+  243  vim playbooks/package-3.yml
+  244  ls
+  245  cd ansible/
+  246  ls
+  247  ct hosts 
+  248  cat hosts 
+  249  cat inventory 
+  250  ;s
+  251  ls
+  252  cd playbooks/
+  253  ls
+  254  cd ..
+  255  vim ansible.cfg 
+  256  cd playbooks/
+  257  ls
+  258  rm -f *.retry
+  259  ls
+  260  vim sample.yml
+  261  cd ..
+  262  vim ansible.cfg 
+  263  ls
+  264  vim inventory 
+  265  ansible-playbook playbooks/sample.yml 
+  266  vim playbooks/sample.yml 
+  267  ansible-playbook playbooks/sample.yml 
+  268  vim playbooks/sample.yml 
+  269  ansible-playbook playbooks/sample.yml 
+  270  vim playbooks/sample.yml 
+  271  ansible-playbook playbooks/sample.yml 
+  272  vim playbooks/sample.yml 
+  273  ansible-playbook playbooks/sample.yml 
+  274  vim playbooks/sample.yml 
+  275  ansible-playbook playbooks/sample.yml 
+  276  ls
+  277  cp -r ansible /tmp
+  278  sudo su - 
+  279  sudo su - rama
+  280  sudo su - 
+  281  sudo su  - rama
+  282  sudo su - rama
+  283  ls
+  284  cd ansible/
+  285  ls
+  286  cd playbooks/
+  287  ls
+  288  cd ..
+  289  ansible-playbook playbooks/package-1.yml 
+  290  cat playbooks/package-1.yml
+  291  cat inventory 
+  292  history 
+  293  Gitpush 
+  294  sudo su - rama
+  295  sudo su - 
+  296  cd ansible/
+  297  ls
+  298  cd playbooks/
+  299  ls
+  300  mkdir plays
+  301  ls
+  302  cd plays/
+  303  ls
+  304  vim httpdserver.yml
+  305  ls
+  306  cd ..
+  307  vim playbook-play-1.yml
+  308  cd play
+  309  ls
+  310  cd plays/
+  311  vim dbserver.yml
+  312  cd ..
+  313  vim playbook-play-1.yml 
+  314  cd ..
+  315  ansible-playbook playbooks/playbook-play-1.yml 
+  316  cd playbooks/
+  317  ls
+  318  mkdir handlers
+  319  cd handler
+  320  ls
+  321  cd handlers/
+  322  vim httpdserver.yml
+  323  vim ../plays/httpdserver.yml 
+  324  cd ..
+  325  ansible-playbook playbooks/playbook-play-1.yml 
+  326  vim playbooks/playbook-play-1.yml
+  327  ansible-playbook playbooks/playbook-play-1.yml 
+  328  vim playbooks/playbook-play-1.yml
+  329  vim playbooks/plays/httpdserver.yml 
+  330  vim playbooks/handlers/httpdserver.yml 
+  331  ansible-playbook playbooks/playbook-play-1.yml 
+  332  vim playbooks/package-6.yml
+  333  ansible-playbook playbooks/package-6.yml 
+  334  ansible-playbook playbooks/playbook-play-1.yml 
+  335  vim playbooks/package-6.yml
+  336  ansible-playbook playbooks/package-6.yml 
+  337  vim playbooks/package-6.yml
+  338  ansible-playbook playbooks/package-6.yml 
+  339  vim playbooks/package-6.yml
+  340  ansible-playbook playbooks/package-6.yml 
+  341  vim playbooks/package-6.yml
+  342  vim playbooks/playbook-play-1.yml 
+  343  cat playbooks/plays/httpdserver.yml 
+  344  vim playbooks/condition-1.yml
+  345  ansible-playbook playbooks/condition-1.yml
+  346  vim inventory 
+  347  ansible-playbook playbooks/condition-1.yml
+  348  cat inventory 
+  349  vim inventory 
+  350  ansible-playbook playbooks/condition-1.yml
+  351  vim playbooks/condition-1.yml 
+  352  ansible 10.128.0.3 -m setup
+  353  ansible all -m setup -a 'filter=ansible_pkg_mgr'
+  354  vim playbooks/condition-1.yml 
+  355  ansible-playbook playbooks/condition-1.yml
+  356  vim playbooks/condition-1.yml
+  357  ansible-playbook playbooks/condition-1.yml
+  358  vim playbooks/condition-1.yml
+  359  ansible-playbook playbooks/condition-1.yml
+  360  vim playbooks/condition-1.yml
+  361  ansible-playbook playbooks/condition-1.yml
+  362  vim playbooks/condition-1.yml
+  363  ansible all -m setup -a 'filter=ansible_distribution'
+  364  vim playbooks/condition-1.yml
+  365  ansible-playbook playbooks/condition-1.yml
+  366  cd playbooks/
+  367  ls
+  368  cp condition-1.yml condition-2.yml 
+  369  vim condition-2.yml 
+  370  cd ..
+  371  ansible-playbook playbooks/condition-2.yml 
+  372  vim playbooks/condition-2.yml 
+  373  ansible-playbook playbooks/condition-2.yml 
+  374  vim playbooks/condition-2.yml 
+  375  vim playbooks/condition-3.yml
+  376  ansible-playbook playbooks/condition-3.yml 
+  377  vim playbooks/condition-3.yml 
+  378  ansible-playbook playbooks/condition-3.yml
+  379  vim playbooks/condition-3.yml 
+  380  ansible-playbook playbooks/condition-3.yml
+  381  cd 
+  382  Gitpush 
+  383  cd ansible/
+  384  Gitpush 
+  385  date >>history 
+  386  echo >>history 
+  387  history >>history 
