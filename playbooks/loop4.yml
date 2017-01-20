@@ -1,0 +1,20 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Istall zsh
+      yum: name=zsh state=installed
+      when: ansible_distribution == "CentOS"
+
+    - name: Install zsh 
+      apt: name=zsh state=installed
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Add user {{item.name}}
+      user: name={{item.name}} groups={{item.groups}} shell=/bin/zsh
+      with_items:
+        - name: user1
+          groups: admin
+        - name: user2
+          groups: admin
+        - name: user3
+          groups: admin

@@ -1,0 +1,9 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Add user {{item}}
+      user: name={{item}}
+      with_items:
+        - user1
+        - user2
+        - user3

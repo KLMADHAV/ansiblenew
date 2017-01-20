@@ -1,0 +1,17 @@
+- hosts: all
+  tasks:
+   - name: copy abc1
+     copy: 
+      src: files/abc1.txt
+      dest: /tmp/abc1.txt
+
+   - name: copy abc2
+     copy:
+      src: files/abc2.txt
+      dest: /tmp/abc2.txt
+
+   - name: copy abc3
+     copy:
+      src: files/abc3.txt
+      dest: /tmp/abc3.txt
+
