@@ -1,0 +1,6 @@
+- name:  start tomcat
+  command: "/sales/tomcat1/tomcatctl.sh start"
+  register: st
+  
+- name: print output
+  debug: msg="{{st}}"

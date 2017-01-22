@@ -1,0 +1,11 @@
+- name: Install Package {{item}}
+  apt: name={{item}} state=installed
+  when: ansible_distribution == "Ubuntu"
+  with_items:
+    - vim
+    - telnet
+    - gcc
+    - gzip
+    - zip
+    - unzip
+    - wget

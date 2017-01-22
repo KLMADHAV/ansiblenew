@@ -1,0 +1,5 @@
+- hosts: sample 
+#  become: yes
+  roles:
+        #- tomcat-install 
+        - start

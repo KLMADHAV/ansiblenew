@@ -1,3 +1,4 @@
-#"{{ansible_distribution}}.yml"
-pack_name: httpd
-
+PROJECT: ecommerce
+URL: https://github.com/versionit/webcontent/blob/master/ecommerce.tgz?raw=true
+document_root: /var/www/html/ecommerce
+virt_server_name: ecommerce.versionit.com

@@ -1,0 +1,5 @@
+- hosts: all
+  become: true
+  roles:
+   - { role: common-centos, when: ansible_distribution == "CentOS" }
+   - { role: common-ubuntu, when: ansible_distribution == "Ubuntu" }

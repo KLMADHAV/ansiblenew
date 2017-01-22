@@ -1,0 +1,5 @@
+- hosts: centos
+  vars:
+        myvar: raju
+  roles:
+        - test

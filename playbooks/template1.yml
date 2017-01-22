@@ -1,0 +1,9 @@
+- hosts: all
+  become: true 
+  vars:
+    sample: "Welcome"
+  tasks:
+     - name: Configure motd
+       template: 
+        src: templates/motd.j2
+        dest: /etc/motd
