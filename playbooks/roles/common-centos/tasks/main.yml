@@ -1,0 +1,11 @@
+- name: Install Package {{item}}
+  yum: name={{item}} state=installed
+  when: ansible_distribution == "CentOS"
+  with_items:
+    - vim
+    - telnet
+    - gcc
+    - gzip
+    - zip
+    - unzip
+    - wget

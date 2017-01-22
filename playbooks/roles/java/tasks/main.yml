@@ -1,0 +1,6 @@
+- name: Extarct Java
+  unarchive: 
+    src: /home/admin/ansible/roles/java/files/jdk-8u121-linux-x64.tar.gz
+    dest: /opt 
+  become: yes
+

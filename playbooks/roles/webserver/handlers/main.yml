@@ -1,0 +1,7 @@
+- name: Restart HTTPD
+  action: service name=httpd state=restarted
+  when: ansible_distribution == "CentOS"
+  
+- name: Restart APACHE2
+  action: service name=apache2 state=restarted
+  when: ansible_distribution == "Ubuntu"
