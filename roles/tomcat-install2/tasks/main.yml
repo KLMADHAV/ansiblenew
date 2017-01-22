@@ -1,3 +1,13 @@
+- name: Check if tomcat is running
+  shell: ps aux | grep {{tomcat_dir}}| grep java | grep -v grep
+  ignore_errors: yes
+  changed_when: false
+  register: service_java_status
+
+- name: Stopping tomcat
+  command: pkill java
+  when: service_java_status.rc == 0
+
 - name: Add group {{group_name}}
   group:
     name: "{{group_name}}"
@@ -44,19 +54,29 @@
     dest: "{{proj_dir}}/{{tomcat_dir}}/tomcatctl.sh"
     mode: 0755
   become_user: "{{user_name}}"
-  
-- name: start tomcat
+
+- name: copy catalina.sh
+  template:
+    src: catalina.sh 
+    dest: "{{proj_dir}}/{{tomcat_dir}}/bin/catalina.sh"
+    mode: 0755
   become_user: "{{user_name}}"
+  
+- name: copy server.xml
+  template:
+    src: server.xml 
+    dest: "{{proj_dir}}/{{tomcat_dir}}/conf/server.xml"
+    mode: 0644
+  become_user: "{{user_name}}"
+
+- name: start tomcat
+  #become_user: "{{user_name}}"
   command: "{{proj_dir}}/{{tomcat_dir}}/tomcatctl.sh start"
+  register: out
   
+- name: print out 
+  debug: msg="{{out}}"
   
-
-
-
-
-
-
-
-
-
-
+- name: checking startup.
+  wait_for:
+    port: 9080

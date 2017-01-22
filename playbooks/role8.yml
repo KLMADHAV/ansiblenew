@@ -1,4 +1,4 @@
-- hosts: sample 
+- hosts: centos 
 #  become: yes
   roles:
         #- tomcat-install 

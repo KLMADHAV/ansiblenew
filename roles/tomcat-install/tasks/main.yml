@@ -48,13 +48,20 @@
   command: mv "{{proj_dir}}/apache-tomcat-9.0.0.M17" "{{proj_dir}}/{{tomcat_dir}}"
   when: st.stat.isdir is defined
   
-#- name: copy tomcatctl.sh
-#  template:
-#    src: tomcatctl.sh 
-#    dest: "{{proj_dir}}/{{tomcat_dir}}/tomcatctl.sh"
-#    mode: 0755
-#  become_user: "{{user_name}}"
+- name: copy tomcatctl.sh
+  template:
+    src: tomcatctl.sh 
+    dest: "{{proj_dir}}/{{tomcat_dir}}/tomcatctl.sh"
+    mode: 0755
+  become_user: "{{user_name}}"
 
+- name: copy catalina.sh
+  template:
+    src: catalina.sh 
+    dest: "{{proj_dir}}/{{tomcat_dir}}/bin/catalina.sh"
+    mode: 0755
+  become_user: "{{user_name}}"
+  
 - name: copy server.xml
   template:
     src: server.xml 
@@ -63,7 +70,7 @@
   become_user: "{{user_name}}"
 
 - name: start tomcat
-  become_user: "{{user_name}}"
+  #become_user: "{{user_name}}"
   command: "{{proj_dir}}/{{tomcat_dir}}/tomcatctl.sh start"
   register: out
   

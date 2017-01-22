@@ -25,6 +25,8 @@ export CATALINA_HOME={{proj_dir}}/{{tomcat_dir}}
  
 #CATALINA_BASE is the location of the configuration files of this instance of Tomcat
 export CATALINA_BASE={{proj_dir}}/{{tomcat_dir}}
+export TOMCAT_USER=sales
+
  
 #TOMCAT_USAGE is the message if this script is called without any options
 TOMCAT_USAGE="Usage: $0 {\e[00;32mstart\e[00m|\e[00;31mstop\e[00m|\e[00;32mstatus\e[00m|\e[00;31mrestart\e[00m}"
@@ -33,7 +35,7 @@ TOMCAT_USAGE="Usage: $0 {\e[00;32mstart\e[00m|\e[00;31mstop\e[00m|\e[00;32mstatu
 SHUTDOWN_WAIT=20
  
 tomcat_pid() {
-        echo `ps -fe | grep $CATALINA_BASE | grep -v grep | tr -s " "|cut -d" " -f2`
+        echo `ps -fe | grep java|grep {{tomcat_dir}} | grep -v grep | tr -s " "|cut -d" " -f2`
 }
  
 start() {
@@ -47,8 +49,7 @@ start() {
     #ulimit -n 100000
     #umask 007
     #/bin/su -p -s /bin/sh tomcat
-        sh $CATALINA_HOME/bin/startup.sh &
-		sleep 2
+	sudo su $TOMCAT_USER -c $CATALINA_HOME/bin/startup.sh
         status
   fi
   return 0

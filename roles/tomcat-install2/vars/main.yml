@@ -1,6 +1,10 @@
 user_name: sales
 group_name: sales
 proj_dir: /sales
-tomcat_loc: /home/admin/ansible/roles/tomcat-install/files/apache-tomcat-9.0.0.M17.tar.gz
+tomcat_loc: /home/admin/apache-tomcat-9.0.0.M17.tar.gz
 tomcat_dir: tomcat2
 JAVA_LOCATION: /opt/jdk1.8.0_121
+red_port: 9443
+ajp_port: 9009
+shut_port: 9005
+conn_port: 9080

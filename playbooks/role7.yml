@@ -1,5 +1,6 @@
-- hosts: centos
+- hosts: centos 
   become: yes
   roles:
-        #- tomcat-install 
-        - start
+        - tomcat-install 
+        - tomcat-install2
+        #- start
